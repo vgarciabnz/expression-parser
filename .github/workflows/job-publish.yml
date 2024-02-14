@@ -22,16 +22,20 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Create version tag
-        run: ./gradlew :nyxMark
+      - name: Publish to github
+        run: ./gradlew :nyxPublish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish Maven
+        if: ${{ false }}
         run: ./.github/workflows/scripts/publish-maven.sh
         env:
           OSSRH_USERNAME: ${{ secrets.SONATYPE_OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.SONATYPE_OSSRH_PASSWORD }}
 
       - name: Publish NPMJS
+        if: ${{ false }}
         run: ./.github/workflows/scripts/publish-npm.sh
         env:
           NPMJS_TOKEN: ${{ secrets.DHIS2_BOT_NPM_TOKEN }}
