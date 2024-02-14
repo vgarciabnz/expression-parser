@@ -7,11 +7,7 @@ on:
       - 'beta'
 
 jobs:
-  unit-test:
-    uses: ./.github/workflows/job-test.yml
-
   check-new-version:
-    needs: unit-test
     uses: ./.github/workflows/job-check-new-version.yml
 
   publish:
