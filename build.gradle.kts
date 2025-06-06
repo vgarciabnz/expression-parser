@@ -10,7 +10,7 @@ repositories {
 }
 
 version = "1.1.10-SNAPSHOT"
-group = "org.hisp.dhis.lib.expression"
+group = "run.clickn.dhis.lib.expression"
 
 if (project.hasProperty("removeSnapshotSuffix")) {
     val mainVersion = (version as String).split("-SNAPSHOT")[0]

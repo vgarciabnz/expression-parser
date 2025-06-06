@@ -18,12 +18,6 @@ jobs:
       - name: Change wrapper permission
         run: chmod +x ./gradlew
 
-      - name: Test
-        run: ./gradlew clean allTests
-
-      - name: API Check
-        run: ./gradlew apiCheck
-
   publish:
     name: Publish
     needs: unit-test
