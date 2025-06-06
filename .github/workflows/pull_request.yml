@@ -37,7 +37,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Publish Maven Snapshot
-        run: ./gradlew publishToSonatype
+        run: ./gradlew publishToSonatype --debug
         env:
           OSSRH_USERNAME: ${{ secrets.SONATYPE_OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.SONATYPE_OSSRH_PASSWORD }}
